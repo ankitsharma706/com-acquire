@@ -1,0 +1,6 @@
+{
+  "name": "CompanyHQ AI - Enterprise Operating System",
+  "description": "Executive-grade enterprise AI operating system combining mission-control telemetry, 3D virtual headquarters, autonomous department workflows, and strategic neural copilot.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

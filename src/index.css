@@ -1,0 +1,414 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FAF9F6;
+    --bg-secondary: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --card-hover: #F8F9FA;
+    --border-color: #E2E8F0;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    /* Brand */
+    --brand-primary: #2563EB;
+    --brand-secondary: #0284C7;
+
+    /* CEO Executive */
+    --ceo-gold: #D97706;
+    --ceo-gold-light: #FDE68A;
+
+    /* AI Neural */
+    --ai-purple: #7C3AED;
+    --ai-blue: #0284C7;
+
+    /* Status */
+    --status-success: #16A34A;
+    --status-warning: #D97706;
+    --status-danger: #DC2626;
+    --status-info: #2563EB;
+    --status-pending: #7C3AED;
+    --status-completed: #059669;
+    --status-rejected: #B91C1C;
+  }
+
+  /* Dark mode variable overrides when explicitly active */
+  :root.dark, html.dark, [data-theme="dark"] {
+    --bg-main: #0A0E17;
+    --bg-secondary: #111827;
+    --card-bg: #141B2D;
+    --card-hover: #1F2937;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A7B0C0;
+    --text-muted: #6B7280;
+
+    --brand-primary: #4F7CFF;
+    --brand-secondary: #00D4FF;
+
+    --ceo-gold: #F5C451;
+    --ceo-gold-light: #FFE28A;
+
+    --ai-purple: #8B5CF6;
+    --ai-blue: #00D4FF;
+
+    --status-success: #22C55E;
+    --status-warning: #F59E0B;
+    --status-danger: #EF4444;
+    --status-info: #3B82F6;
+    --status-pending: #8B5CF6;
+    --status-completed: #10B981;
+    --status-rejected: #DC2626;
+  }
+
+  /* Default Body Style: Milky White Canvas */
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FAF9F6;
+    color: #0F172A;
+  }
+
+  html.dark body,
+  body.dark,
+  [data-theme="dark"] body {
+    background-color: #0A0E17;
+    color: #FFFFFF;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* =========================================================
+   Milky White Surface & Card System
+   ========================================================= */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: #FAFAF9;
+  border-color: #CBD5E1;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.07), 0 0 20px -5px rgba(37, 99, 235, 0.1);
+}
+
+.glass-panel {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: #FAFAF9;
+  border-color: #CBD5E1;
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.08);
+}
+
+/* Master Button Styles */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #2563EB, #0284C7);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.25);
+}
+.btn-primary-gradient:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(2, 132, 199, 0.35);
+}
+
+.btn-secondary-glass {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
+  font-weight: 600;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.btn-secondary-glass:hover {
+  background: #F8FAFC;
+  border-color: #CBD5E1;
+  transform: translateY(-1px);
+}
+
+/* Executive CEO Gold Color System (Light mode refined) */
+.ceo-gold-badge {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #B45309;
+  font-weight: 700;
+}
+
+.ceo-gold-gradient {
+  background: linear-gradient(135deg, #D97706, #F59E0B);
+  color: #FFFFFF !important;
+}
+
+.ceo-card-gold {
+  background: linear-gradient(135deg, rgba(254, 243, 199, 0.7), #FFFFFF);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.08);
+}
+
+/* AI Assistant Color System */
+.ai-gradient-bg {
+  background: linear-gradient(135deg, #7C3AED, #2563EB, #0284C7);
+  color: #FFFFFF !important;
+}
+
+.ai-gradient-text {
+  background: linear-gradient(135deg, #7C3AED, #2563EB, #0284C7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ai-card-surface {
+  background: linear-gradient(135deg, rgba(237, 233, 254, 0.7), #FFFFFF);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 24px;
+  box-shadow: 0 12px 36px -10px rgba(139, 92, 246, 0.08);
+}
+
+.ai-glow {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.2), 0 0 15px rgba(2, 132, 199, 0.15);
+}
+
+/* Department Color Utilities */
+.dept-ceo { color: #B45309; }
+.dept-hr { color: #7E22CE; }
+.dept-finance { color: #047857; }
+.dept-engineering { color: #1D4ED8; }
+.dept-design { color: #BE185D; }
+.dept-marketing { color: #C2410C; }
+.dept-sales { color: #0F766E; }
+.dept-operations { color: #4338CA; }
+.dept-support { color: #0E7490; }
+
+/* Status Badges */
+.status-badge-success { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+.status-badge-warning { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+.status-badge-danger { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+.status-badge-info { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+.status-badge-pending { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+
+/* =========================================================
+   Milky White Global Overrides
+   Transforms dark utility classes across all components
+   into clean porcelain cards, crisp borders, and dark text.
+   ========================================================= */
+
+/* Main canvas & surfaces */
+html:not(.dark) .bg-\[\#0A0E17\],
+html:not(.dark) .bg-\[\#070A13\],
+html:not(.dark) .bg-\[\#0A0E17\]\/60,
+html:not(.dark) .bg-\[\#0A0E17\]\/80,
+html:not(.dark) .bg-\[\#0A0E17\]\/85,
+html:not(.dark) .bg-\[\#0A0E17\]\/90,
+html:not(.dark) .bg-\[\#0A0E17\]\/95 {
+  background-color: #FAF9F6 !important;
+}
+
+/* Secondary cards, panels, modals & dropdowns */
+html:not(.dark) .bg-\[\#0B0F19\],
+html:not(.dark) .bg-\[\#111827\],
+html:not(.dark) .bg-\[\#141B2D\],
+html:not(.dark) .bg-\[\#0D1117\],
+html:not(.dark) .bg-\[\#0B0F19\]\/60,
+html:not(.dark) .bg-\[\#0B0F19\]\/70,
+html:not(.dark) .bg-\[\#0B0F19\]\/80,
+html:not(.dark) .bg-\[\#0B0F19\]\/90,
+html:not(.dark) .bg-\[\#141B2D\]\/80,
+html:not(.dark) .bg-\[\#141B2D\]\/90 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* Recessed inputs, active tabs, & subtle surfaces */
+html:not(.dark) .bg-\[\#1F2937\],
+html:not(.dark) .bg-\[\#1C253D\] {
+  background-color: #F1F5F9 !important;
+}
+
+/* Sub-card & chip backgrounds */
+html:not(.dark) .bg-white\/\[0\.02\],
+html:not(.dark) .bg-white\/\[0\.03\],
+html:not(.dark) .bg-white\/\[0\.04\],
+html:not(.dark) .bg-white\/5 {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) .bg-white\/\[0\.06\],
+html:not(.dark) .bg-white\/\[0\.08\],
+html:not(.dark) .bg-white\/10 {
+  background-color: #F1F5F9 !important;
+}
+
+/* Hover effects */
+html:not(.dark) .hover\:bg-white\/\[0\.04\]:hover,
+html:not(.dark) .hover\:bg-white\/\[0\.06\]:hover,
+html:not(.dark) .hover\:bg-white\/\[0\.08\]:hover,
+html:not(.dark) .hover\:bg-white\/10:hover {
+  background-color: #E2E8F0 !important;
+}
+
+/* Borders */
+html:not(.dark) .border-white\/\[0\.04\],
+html:not(.dark) .border-white\/\[0\.06\],
+html:not(.dark) .border-white\/\[0\.08\],
+html:not(.dark) .border-white\/10,
+html:not(.dark) .border-white\/20,
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-700\/70,
+html:not(.dark) .border-slate-700\/80 {
+  border-color: #E2E8F0 !important;
+}
+
+/* High-Contrast Light Mode Typography */
+html:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .text-\[\#E2E8F0\] {
+  color: #1E293B !important;
+}
+
+html:not(.dark) .text-\[\#A7B0C0\] {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-\[\#6B7280\],
+html:not(.dark) .text-slate-400 {
+  color: #64748B !important;
+}
+
+/* CRITICAL: Retain crisp white text on colored buttons, gradient headers, and badges */
+html:not(.dark) .btn-primary-gradient,
+html:not(.dark) .btn-primary-gradient *,
+html:not(.dark) button.bg-gradient-to-r,
+html:not(.dark) button.bg-gradient-to-r *,
+html:not(.dark) a.bg-gradient-to-r,
+html:not(.dark) a.bg-gradient-to-r *,
+html:not(.dark) .bg-gradient-to-r.text-white,
+html:not(.dark) .bg-gradient-to-r.text-white *,
+html:not(.dark) .bg-blue-600,
+html:not(.dark) .bg-blue-600 *,
+html:not(.dark) .bg-blue-500,
+html:not(.dark) .bg-blue-500 *,
+html:not(.dark) .bg-rose-600,
+html:not(.dark) .bg-rose-600 *,
+html:not(.dark) .bg-rose-500,
+html:not(.dark) .bg-rose-500 *,
+html:not(.dark) .bg-emerald-600,
+html:not(.dark) .bg-emerald-600 *,
+html:not(.dark) .bg-emerald-500,
+html:not(.dark) .bg-emerald-500 *,
+html:not(.dark) .bg-violet-600,
+html:not(.dark) .bg-violet-600 *,
+html:not(.dark) .bg-indigo-600,
+html:not(.dark) .bg-indigo-600 *,
+html:not(.dark) .bg-amber-500,
+html:not(.dark) .bg-amber-500 *,
+html:not(.dark) .bg-black\/30,
+html:not(.dark) .bg-black\/60,
+html:not(.dark) .bg-black\/80,
+html:not(.dark) .bg-black\/90,
+html:not(.dark) .badge-solid-white-text {
+  color: #FFFFFF !important;
+}
+
+/* Inputs, Textareas, Selects */
+html:not(.dark) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+html:not(.dark) select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* Clean Light Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Dark mode scrollbars when dark is active */
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(10, 14, 23, 0.6);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(79, 124, 255, 0.25);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 124, 255, 0.5);
+}
+
+/* Glow highlights */
+.glow-primary {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.2);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(217, 119, 6, 0.2);
+}
+
+/* Isometric 3D floor map transform helpers */
+.isometric-grid {
+  transform: rotateX(55deg) rotateZ(-40deg);
+  transform-style: preserve-3d;
+}
+
+.isometric-room {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.isometric-room:hover {
+  transform: translateZ(16px);
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-radar {
+  animation: radar-sweep 4s linear infinite;
+}
